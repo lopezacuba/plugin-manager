@@ -1,10 +1,10 @@
 <?php
 /**
-* Core file.
+* Core file
 * @author Mark Errington
 * @version Jomres 9.x.x
 * @package Jomres
-* @copyright 2005-2020 Mark Errington
+* @copyright 2005 - 2020 Mark Errington
 * Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
 **/
 class j16000removeplugin

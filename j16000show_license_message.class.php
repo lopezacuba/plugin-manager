@@ -1,6 +1,6 @@
 <?php
 /**
-* Core file.
+* Core file
 * @author Mark Errington
 * @version Jomres 9.x.x
 * @package Jomres
