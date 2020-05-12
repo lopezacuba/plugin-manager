@@ -17,4 +17,4 @@ Here is a place to download all the Jomres core plugins, QuickStarts, Joomla Tem
 http://nwbooking.com/
 
 And ALL Jomres Plugin Managers (from 1.0 to 3.1):
-http://nwbooking.com/jonres_plugin_managers_all/
+http://www.nwbooking.com/Jomres_Core_Plugin_Managers_All/
