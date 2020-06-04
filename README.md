@@ -9,9 +9,9 @@ OR
 Copy these files over your ionCube coded plugin manager files in the Jomres plugin_manager directory located here:
 /jomres/core-plugins/plugin_manager/
 
-You will no longer need a Jomres 30-day subscription license or just a subscription license to keep using Jomres.
+You will no longer need a Jomres subscription license to keep using Jomres.
 
-You will need to get a 30 day Jomres subscription license to update the other plugins.
+You will need to get a Free 30 day Jomres subscription license to update the other plugins.
 
 Here is a place to download all the Jomres core plugins, QuickStarts, Joomla Templetes:
 http://nwbooking.com/
