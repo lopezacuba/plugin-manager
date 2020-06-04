@@ -18,3 +18,5 @@ http://nwbooking.com/
 
 And ALL Jomres Plugin Managers (from 1.0 to 3.1):
 http://www.nwbooking.com/Jomres_Core_Plugin_Managers_All/
+
+All open source.
