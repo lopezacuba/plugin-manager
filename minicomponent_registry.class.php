@@ -1,12 +1,7 @@
 <?php
 /**
-* Core file
-* @author Mark Errington
-* @version Jomres 9.x.x
-* @package Jomres
-* @copyright 2005 - 2020 Mark Errington
-* New for v3.2 of Jomres. Allows the system to create a registry file so that the minicomponent handler doesn't need to constantly search folders and record minicomponents on each run.
-**/
+ * New for v3.2 of Jomres. Allows the system to create a registry file so that the minicomponent handler doesn't need to constantly search folders and record minicomponents on each run.
+ */
 class minicomponent_registry
 {
     private static $configInstance = NULL;

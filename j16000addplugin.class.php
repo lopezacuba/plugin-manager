@@ -1,11 +1,13 @@
 <?php
 /**
-* Core file
-* @author Mark Errington
-* @version Jomres 9.x.x
-* @package Jomres
-* @copyright 2005 - 2020 Mark Errington
-* Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
+ * Core file.
+ *
+ * @author Vince Wooll <sales@jomres.net>
+ *
+ * @version Jomres 9.9.12
+ *
+ * @copyright	2005-2017 Vince Wooll
+ * Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
  **/
 class j16000addplugin
 {
@@ -285,8 +287,10 @@ class j16000addplugin
                             if (!file_exists($updateDirPath . "unpacked" . JRDS . "plugin_info.php")) {
                                 $error_messsage["ERROR"] = " Plugin info file does not exist, cannot continue with installation. ";
                             } else {
-                                require_once $updateDirPath . "unpacked" . JRDS . "plugin_info.php";
                                 $classname = "plugin_info_" . $pluginName;
+                                if (!class_exists($classname)) {
+                                    require_once $updateDirPath . "unpacked" . JRDS . "plugin_info.php";
+                                }
                                 $plugin_class = new $classname();
                                 $min_jomres_ver = explode(".", $plugin_class->data["min_jomres_ver"]);
                                 if (count($min_jomres_ver) == 3 && count($this_jomres_version) == 3) {

@@ -1,11 +1,13 @@
 <?php
 /**
-* Core file.
-* @author Mark Errington
-* @version Jomres 9.x.x
-* @package Jomres
-* @copyright 2005 - 2020 Mark Errington
-* Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
+ * Core file.
+ *
+ * @author Vince Wooll <sales@jomres.net>
+ *
+ * @version Jomres 9.9.10
+ *
+ * @copyright	2005-2017 Vince Wooll
+ * Jomres (tm) PHP, CSS & Javascript files are released under both MIT and GPL2 licenses. This means that you can choose the license that best suits your project, and use it accordingly
  **/
 class jomres_check_support_key
 {
@@ -85,7 +87,7 @@ class jomres_check_support_key
                 } else {
                     $license_data->key_status = $license_data->status;
                 }
-                $lic_data = "<?php\r\ndefined( '_JOMRES_INITCHECK' ) or die( '' );\r\n\$license_data\t= new stdClass;\r\n\$license_data->license_name = \"" . $license_data->license_name . "\";\r\n\$license_data->expires = \"" . $license_data->expires . "\";\r\n\$license_data->key_status = \"" . $license_data->key_status . "\";\r\n\$license_data->owner = \"" . $license_data->owner . "\";\r\n\$license_data->license_valid = \"" . $license_data->license_valid . "\";\r\n\$license_data->allows_plugins = \"" . $license_data->allows_plugins . "\";\r\n\$license_data->is_trial_license = \"" . $license_data->is_trial_license . "\";\r\n\$license_data->allowed_plugins = \"" . $license_data->allowed_plugins . "\";\r\n";
+                $lic_data = "<?php\ndefined( '_JOMRES_INITCHECK' ) or die( '' );\n\$license_data\t= new stdClass;\n\$license_data->license_name = \"" . $license_data->license_name . "\";\n\$license_data->expires = \"" . $license_data->expires . "\";\n\$license_data->key_status = \"" . $license_data->key_status . "\";\n\$license_data->owner = \"" . $license_data->owner . "\";\n\$license_data->license_valid = \"" . $license_data->license_valid . "\";\n\$license_data->allows_plugins = \"" . $license_data->allows_plugins . "\";\n\$license_data->is_trial_license = \"" . $license_data->is_trial_license . "\";\n\$license_data->allowed_plugins = \"" . $license_data->allowed_plugins . "\";\n";
                 file_put_contents(JOMRES_TEMP_ABSPATH . "license_key_check_cache.php", $lic_data);
             }
         }
