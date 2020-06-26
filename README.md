@@ -11,7 +11,7 @@ Copy these files over your ionCube coded plugin manager files in the Jomres plug
 
 You will no longer need a Jomres subscription license to keep using Jomres.
 
-You will need to get a Free 30 day Jomres subscription license to update the other plugins.
+If you wanted to update these plugins you will need to get a paid Jomres subscription license. As of June 2020, Jomres no longer has the 30 day Free license.
 
 Here is a place to download all the Jomres core plugins, QuickStarts, Joomla Templetes:
 http://nwbooking.com/
