@@ -331,7 +331,7 @@ class j16000addplugin
 					dirmv($source, $destination);
 					rmdir($source);
 				}
-	//			$zip->close();
+				$zip->close();
 			} else {
 				$error_messsage[ 'ERROR' ] = ' Unable to unzip '.$newfilename;
 			}
