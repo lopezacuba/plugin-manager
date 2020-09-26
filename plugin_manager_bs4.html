@@ -92,9 +92,9 @@
         document.addEventListener('DOMContentLoaded', function() {
 			jomresJquery('.btn').on('click', function() {
 				var $this = jomresJquery(this);
-				$this.button('loading');
+				//$this.button('loading');
 				setTimeout(function() {
-				   $this.button('reset');
+				   //$this.button('reset');
 			   }, 8000);
 			});
         });
@@ -181,14 +181,14 @@
 	<h3 class="page-header">Plugins</h3>
 
 	<div class="tabbable">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#coreplugins" data-toggle="tab">Core plugins</a></li>
-			<li><a href="#apiplugins" data-toggle="tab">Core API plugins</a></li>
-			<li><a href="#webhooksplugins" data-toggle="tab">Webhooks plugins</a></li>
-			<li><a href="#3rdpplugins" data-toggle="tab">Third party plugins</a></li>
-			<li><a href="#install3rdpplugin" data-toggle="tab">Install third party plugin</a></li>
+		<ul class="nav nav-tabs" id="myTab" >
+			<li class="nav-item active" role="presentation" ><a href="#coreplugins" data-toggle="tab">Core plugins</a></li>
+			<li class="nav-item" role="presentation"><a href="#apiplugins" data-toggle="tab">Core API plugins</a></li>
+			<li class="nav-item" role="presentation"><a href="#webhooksplugins" data-toggle="tab">Webhooks plugins</a></li>
+			<li class="nav-item" role="presentation"><a href="#3rdpplugins" data-toggle="tab">Third party plugins</a></li>
+			<li class="nav-item" role="presentation"><a href="#install3rdpplugin" data-toggle="tab">Install third party plugin</a></li>
 			<patTemplate:tmpl name="third_party_dev_plugin_tabs" type="simpleCondition" requiredVars="third_party_plugin_tab_name">
-			<li><a href="#3pd_tab_{THIRD_PARTY_PLUGIN_TAB_ID}" data-toggle="tab">{THIRD_PARTY_PLUGIN_TAB_NAME}</a></li>
+			<li class="nav-item" role="presentation"><a href="#3pd_tab_{THIRD_PARTY_PLUGIN_TAB_ID}" data-toggle="tab">{THIRD_PARTY_PLUGIN_TAB_NAME}</a></li>
 			</patTemplate:tmpl>
 		</ul>
 		<div class="tab-content">
@@ -212,43 +212,50 @@
 					</tr>
 					<!-- Modal -->
 					<div id="modal_trigger_{PLUGIN_NAME}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h3 id="myModalLabel">{READABLE_NAME}</h3>
-						</div>
-						<div class="modal-body">
-							<div class="row-fluid">
-								<div class="span6">
-									<img src="{IMAGE}" class="img-responsive" alt="{READABLE_NAME}"/>
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h3 id="myModalLabel">{READABLE_NAME}</h3>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+
 								</div>
-								<div class="span6">
-									<div class="alert alert-info">
-										<p>Minimum Jomres version {MIN_JOMRES_VER}</p>
-										<p>Your Version {LOCAL_VER}</p>
-										<p>Current Version {REMOTE_VER}</p>
-										<p>Last updated {LASTUPDATE}</p>
-										<p>
-											<a href="{MANUAL_LINK}" target="_blank" class="{MANUAL_CLASS}">{MANUAL_TEXT}</a>
-											<a href="{DEMO_LINK}" target="_blank" class="{DEMO_CLASS}">{DEMO_TEXT}</a>
-										</p>
+								<div class="modal-body">
+									<div class="row-fluid">
+										<div class="span6">
+											<img src="{IMAGE}" class="img-responsive" alt="{READABLE_NAME}"/>
+										</div>
+										<div class="span6">
+											<div class="alert alert-info">
+												<p>Minimum Jomres version {MIN_JOMRES_VER}</p>
+												<p>Your Version {LOCAL_VER}</p>
+												<p>Current Version {REMOTE_VER}</p>
+												<p>Last updated {LASTUPDATE}</p>
+												<p>
+													<a href="{MANUAL_LINK}" target="_blank" class="{MANUAL_CLASS}">{MANUAL_TEXT}</a>
+													<a href="{DEMO_LINK}" target="_blank" class="{DEMO_CLASS}">{DEMO_TEXT}</a>
+												</p>
+											</div>
+										</div>
+									</div>
+									<p class="text-info">{PLUGIN_DESC}</p>
+									<p class="{HIGHLIGHT_CLASS}">{HIGHLIGHT}</p>
+									<button type="button" class="btn" data-toggle="collapse" data-target="#collapse_{PLUGIN_NAME}">
+										Changelog
+									</button>
+									<div id="collapse_{PLUGIN_NAME}" class="collapse">
+										<div class="row-fluid">
+											<div class="span12">
+												<p class="muted">{CHANGELOG}</p>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-							<p class="text-info">{PLUGIN_DESC}</p>
-							<p class="{HIGHLIGHT_CLASS}">{HIGHLIGHT}</p>
-							<button type="button" class="btn" data-toggle="collapse" data-target="#collapse_{PLUGIN_NAME}">
-								Changelog
-							</button>
-							<div id="collapse_{PLUGIN_NAME}" class="collapse">
-								<div class="row-fluid">
-									<div class="span12">
-										<p class="muted">{CHANGELOG}</p>
-									</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 								</div>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 					</div>
 					</patTemplate:tmpl>

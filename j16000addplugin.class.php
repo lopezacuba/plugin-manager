@@ -331,7 +331,7 @@ class j16000addplugin
 					dirmv($source, $destination);
 					rmdir($source);
 				}
-				$zip->close();
+	//			$zip->close();
 			} else {
 				$error_messsage[ 'ERROR' ] = ' Unable to unzip '.$newfilename;
 			}
@@ -371,7 +371,7 @@ class j16000addplugin
 					} else {
 						$error_messsage[ 'ERROR' ] = " Failed dependencies check. Please ensure that you've installed the following plugins before attempting to install this one: ";
 						foreach ($info->dependencies as $d) {
-							$error_messsage[ 'ERROR' ] .= '<a href="'.JOMRES_SITEPAGE_URL_ADMIN.'&task=addplugin&no_html=1&plugin='.$d.'" target="_blank">'.$d.'</a>';
+							$error_messsage[ 'ERROR' ] .= '<button type="button" href="'.JOMRES_SITEPAGE_URL_ADMIN.'&task=addplugin&no_html=1&plugin='.$d.'" target="_blank">'.$d.'</button>';
 						}
 					}
 				}
@@ -552,8 +552,8 @@ class j16000addplugin
 			if ( $ajax_install ) {
 				ob_clean();
 
-				$this->retVals ['install_button'] = '<a onclick="install_plugin(\''.$pluginName.'\');" class="btn btn-primary" id="install_button_content_'.$pluginName.'" >Reinstall</a>';
-				$this->retVals ['uninstall_button'] = '<a onclick="uninstall_plugin(\''.$pluginName.'\');" class="btn btn-danger" id="uninstall_button_content_'.$pluginName.'">Uninstall</a>';
+				$this->retVals ['install_button'] = '<button type="button" onclick="install_plugin(\''.$pluginName.'\');" class="btn btn-primary" id="install_button_content_'.$pluginName.'" >Reinstall</button>';
+				$this->retVals ['uninstall_button'] = '<button type="button" onclick="uninstall_plugin(\''.$pluginName.'\');" class="btn btn-danger" id="uninstall_button_content_'.$pluginName.'">Uninstall</button>';
 				echo json_encode($this->retVals);
 			}
 			else {
