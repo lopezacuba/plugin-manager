@@ -16,7 +16,11 @@ If you wanted to update these plugins you will need to get a paid Jomres subscri
 Here is a place to download all the Jomres core plugins, QuickStarts, Joomla Templetes:
 http://nwbooking.com/
 
-And ALL Jomres Plugin Managers (from 1.0 to 3.1):
+And ALL Jomres Plugin Managers (from 1.0 to 3.6):
 http://www.nwbooking.com/Jomres_Core_Plugin_Managers_All/
 
 All open source.
+
+Below are Jomres Price Changes over the years!
+
+http://www.fixmycomputermark.com/hacks.html?view=kb&kbartid=23
