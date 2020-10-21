@@ -152,16 +152,22 @@ class j16000addplugin
 			$progress_messages[ ] = array('MESSAGE' => 'No need to make '.$remote_pluginsDirPath.'');
 		}
 
-		if (!is_dir(JOMRESCONFIG_ABSOLUTE_PATH.JOMRES_ROOT_DIRECTORY.JRDS.'updates')) {
-			if (!mkdir(JOMRESCONFIG_ABSOLUTE_PATH.JOMRES_ROOT_DIRECTORY.JRDS.'updates')) {
-				$error_messsage[ 'ERROR' ] = "Couldn't make the folder ".JOMRESCONFIG_ABSOLUTE_PATH.JOMRES_ROOT_DIRECTORY.JRDS.'updates'.' so quitting.';
+		if ( substr(JOMRESCONFIG_ABSOLUTE_PATH,-1) != '/' ) {
+			$absolute_path = JOMRESCONFIG_ABSOLUTE_PATH."/";
+		}  else {
+			$absolute_path = JOMRESCONFIG_ABSOLUTE_PATH."/";
+		}
+
+		if (!is_dir($absolute_path.JOMRES_ROOT_DIRECTORY.JRDS.'updates')) {
+			if (!mkdir($absolute_path.JOMRES_ROOT_DIRECTORY.JRDS.'updates')) {
+				$error_messsage[ 'ERROR' ] = "Couldn't make the folder ".$absolute_path.JOMRES_ROOT_DIRECTORY.JRDS.'updates'.' so quitting.';
 				echo $error_messsage[ 'ERROR' ];
 
 				return;
 			}
 		}
 
-		$updateDirPath = JOMRESCONFIG_ABSOLUTE_PATH.JOMRES_ROOT_DIRECTORY.JRDS.'updates'.JRDS.$pluginName.JRDS;
+		$updateDirPath = $absolute_path.JOMRES_ROOT_DIRECTORY.JRDS.'updates'.JRDS.$pluginName.JRDS;
 
 		if (is_dir($updateDirPath)) {
 			$progress_messages[ ] = array('MESSAGE' => 'Cleaning up '.$updateDirPath.' unpacked for a new installation of the plugin.');
